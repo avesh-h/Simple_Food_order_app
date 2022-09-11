@@ -1,6 +1,7 @@
 import React from 'react'
 import CartItem from './CartItem'
 import {useSelector} from 'react-redux'
+import '../Cart/Carts.css'
 
 function Carts() {
   const cartItems = useSelector((state)=>{

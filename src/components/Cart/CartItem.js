@@ -22,9 +22,10 @@ function CartItem(props) {
 
   return (
         <Card 
-        style={{width:'fit-content' ,
+        style={{width:'100%' ,
          backgroundColor:'black',
          color:'white',
+         textAlign : 'center'
             }}> 
 
 
