@@ -14,10 +14,10 @@ function CartButton(props) {
         dispatch(uiActions.toggleCart())
     }
   return (
-    <button onClick={CartHandler}>
+    <button onClick={CartHandler} style={{display:'flex', justifyContent:'space-evenly' , width:'12%'}}>
       <span><i class="fa-solid fa-cart-plus"></i></span>
       <span>My Cart</span>
-      <span>{totalItems}</span>
+      <span>({totalItems})</span>
     </button>
   )
 }

@@ -17,15 +17,14 @@ function ProductItem(props) {
         }))
     }
     return (
-  
-        <Card style={{width:'30%' , float :'left' , margin:'20px'}}> 
-        <img src={image} style={{width: '100%' , height:'300px'}} />
-            <CardBody>
-            <h4>Title:{title}</h4> 
-            <h5>Meal Code:{id}</h5> 
-            <Button color='primary' onClick={addToCart}>Add To Cart</Button>
-            </CardBody>
-        </Card>
+            <Card style={{width:'100%' , float :'left'}}> 
+            <img src={image} style={{width: '100%' , height:'300px'}} />
+                <CardBody>
+                <h4>Title:{title}</h4> 
+                <h5>Meal Code:{id}</h5> 
+                <Button color='primary' onClick={addToCart}>Add To Cart</Button>
+                </CardBody>
+            </Card>
     
   )
 }
