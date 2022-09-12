@@ -1,0 +1,9 @@
+.cart-btn{
+    display: flex;
+    justify-content: space-evenly;
+    width: 12%;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 2px;
+}

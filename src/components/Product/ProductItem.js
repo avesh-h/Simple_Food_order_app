@@ -17,7 +17,7 @@ function ProductItem(props) {
         }))
     }
     return (
-            <Card style={{width:'100%' , float :'left'}}> 
+            <Card style={{width:'100%' , float :'left', backgroundColor:'#474774',padding:'20px',marginTop:'10px'}}> 
             <img src={image} style={{width: '100%' , height:'300px'}} />
                 <CardBody>
                 <h4>Title:{title}</h4> 

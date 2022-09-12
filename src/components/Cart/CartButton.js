@@ -1,6 +1,7 @@
 import React from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 import {uiActions} from '../../store/ui-Slice'
+import './CartButton.css'
 
 
 function CartButton(props) {
@@ -14,7 +15,7 @@ function CartButton(props) {
         dispatch(uiActions.toggleCart())
     }
   return (
-    <button onClick={CartHandler} style={{display:'flex', justifyContent:'space-evenly' , width:'12%'}}>
+    <button className='cart-btn' onClick={CartHandler} >
       <span><i class="fa-solid fa-cart-plus"></i></span>
       <span>My Cart</span>
       <span>({totalItems})</span>

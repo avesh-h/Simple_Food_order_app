@@ -37,7 +37,7 @@ const getProducts = async (itemName)=>{
 
 
   return (
-    <div>
+    <div className='products-component'>
        <h2>Order Your Fravoite Meal Now</h2> 
        <SearchBar onSearch={getProducts}/>
        <div className='products'>

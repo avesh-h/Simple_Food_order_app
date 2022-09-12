@@ -93,8 +93,8 @@ function App() {
       <div className="App">
           <Navbar onLogout={logout} />
           <Routes>
-            <Route path='/login' element = {<LoginForm onLogin={login} />} />
-            <Route path='/signup' element = {<RegisterForm onRegister={register} />} />    
+            <Route path='/login' element = {!isLoggedIn &&<LoginForm onLogin={login} />} />
+            <Route path='/signup' element = {!isLoggedIn &&<RegisterForm onRegister={register} />} />    
           </Routes> 
             { isLoggedIn && <div>
               {showCart && <Carts />}

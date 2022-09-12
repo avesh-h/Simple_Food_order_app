@@ -23,7 +23,7 @@ function CartItem(props) {
   return (
         <Card 
         style={{width:'100%' ,
-         backgroundColor:'black',
+         backgroundColor:'#15152e',
          color:'white',
          textAlign : 'center'
             }}> 
