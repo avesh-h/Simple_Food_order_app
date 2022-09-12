@@ -22,7 +22,7 @@ function ProductItem(props) {
                 <CardBody>
                 <h4>Title:{title}</h4> 
                 <h5>Meal Code:{id}</h5> 
-                <Button color='primary' onClick={addToCart}>Add To Cart</Button>
+                <Button color='light' onClick={addToCart}>Add To Cart</Button>
                 </CardBody>
             </Card>
     

@@ -50,7 +50,7 @@ function App() {
     })
   },[cart])
 
-
+//Register account
   const register = async (data) =>{
     try{
     const user = await createUserWithEmailAndPassword(
@@ -64,6 +64,7 @@ function App() {
     }
   }
 
+  // login accout
   const login = async (data)=>{
     try{
       const user = await signInWithEmailAndPassword(
@@ -77,6 +78,7 @@ function App() {
     dispatch(authActions.login())
   }
 
+  // Logout
   const logout= async ()=>{
    await signOut(auth)
    dispatch(authActions.logout())

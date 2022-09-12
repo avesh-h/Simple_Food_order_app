@@ -17,7 +17,7 @@ function SearchBar(props) {
   return (
     <form className="d-flex" role="search" onSubmit={SubmitHandler}>
     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={getCountryHandler} />
-    <button className="btn btn-outline-success" type="submit">Search</button>
+    <button className="btn btn-outline-light" type="submit">Search</button>
   </form>
   )
 }

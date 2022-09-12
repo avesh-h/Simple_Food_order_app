@@ -17,7 +17,7 @@ function Navbar(props) {
   return (
 <nav className="navbar navbar-expand-lg bg-transparent">
   <div className="container-fluid">
-    <a className="navbar-brand" href="/">FasteR_Meal</a>
+    <a className="navbar-brand" href="/login">FasteR_Meal</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
