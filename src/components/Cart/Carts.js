@@ -4,6 +4,7 @@ import {useSelector} from 'react-redux'
 import '../Cart/Carts.css'
 
 function Carts() {
+
   const cartItems = useSelector((state)=>{
     return state.cart.items
   })  
@@ -17,8 +18,13 @@ function Carts() {
     )
   })
 
+
+
+  // console.log(`empty ${cartShown}`)
+
   return (
     <div className='main-cart'>
+      {cartShown.length == 0 && <h3>No Order yet!</h3>}
       {/* <CartItem 
       items = {{title:'dummy_meal',id : '233'}}
       /> */}
