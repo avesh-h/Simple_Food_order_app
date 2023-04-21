@@ -74,7 +74,7 @@ function App() {
       });
     } finally {
       if (user) {
-        window.open(`${process.env.REACT_APP_MY_URL}`, "_self");
+        window.open(`${process.env.REACT_APP_MY_URL}/login`, "_self");
       }
     }
   };
