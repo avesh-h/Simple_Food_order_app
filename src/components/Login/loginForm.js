@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "../Login/loginForm.css";
+import {useNavigate} from 'react-router-dom'
 
 function LoginForm(props) {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const navigate = useNavigate()
 
   const SubmitHandler = (e) => {
     e.preventDefault();
@@ -12,6 +14,9 @@ function LoginForm(props) {
       loginPassword,
     };
     props.onLogin(LoginData);
+    // if(localStorage.getItem('loggedIn')){
+      navigate('/dashboard')
+    // }
   };
 
   return (

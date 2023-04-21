@@ -17,3 +17,8 @@
 .navbar-brand{
     color: #fff;
 }
+.navbar-brand:hover,
+.navbar-brand:active{
+    color: #fff;
+    opacity: 0.7;
+}

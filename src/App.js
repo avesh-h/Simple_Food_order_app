@@ -1,20 +1,20 @@
-import "./App.css";
-import Carts from "./components/Cart/Carts";
-import Navbar from "./components/Layout/Navbar";
-import Products from "./components/Product/Products";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import LoginForm from "./components/Login/loginForm";
-import RegisterForm from "./components/Register/RegisterForm";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { auth } from "./components/config/firebaseConfig";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { authActions } from "./store/LoginAuth";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import "./App.css";
+import Carts from "./components/Cart/Carts";
+import Navbar from "./components/Layout/Navbar";
+import LoginForm from "./components/Login/loginForm";
+import Products from "./components/Product/Products";
+import RegisterForm from "./components/Register/RegisterForm";
+import { auth } from "./components/config/firebaseConfig";
+import { authActions } from "./store/LoginAuth";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,11 +29,11 @@ function App() {
     return state.auth.Authentication;
   });
 
-  //Send Cartdata to the Firebase
   const cart = useSelector((state) => {
     return state.cart;
   });
 
+  //Send Cartdata to the Firebase
   useEffect(() => {
     if (isLoggedIn) {
       const sendCartData = async () => {
@@ -72,6 +72,10 @@ function App() {
         progress: undefined,
         theme: "dark",
       });
+    } finally {
+      if (user) {
+        window.open(`${process.env.REACT_APP_MY_URL}`, "_self");
+      }
     }
   };
 
@@ -130,7 +134,7 @@ function App() {
             element={!isLoggedIn && <RegisterForm onRegister={register} />}
           />
         </Routes>
-        {isLoggedIn && (
+        {localStorage.getItem('loggedIn') && (
           <div>
             {showCart && <Carts />}
             <Products />

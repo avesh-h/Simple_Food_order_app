@@ -1,17 +1,16 @@
 import React from "react";
-import CartButton from "../Cart/CartButton";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import CartButton from "../Cart/CartButton";
 import "../Layout/Navbar.css";
+import { useNavigate } from "react-router-dom";
 
 function Navbar(props) {
-  const isLoggedIn = useSelector((state) => {
-    return state.auth.Authentication;
-  });
-  
+  const isAuth = localStorage.getItem("loggedIn");
+  const navigate = useNavigate()
 
   const logOutHandler = () => {
     props.onLogout();
+    navigate('/login')
   };
 
   return (
@@ -33,7 +32,7 @@ function Navbar(props) {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            {isLoggedIn && (
+            {isAuth && (
               <li className="nav-item">
                 <Link
                   className="nav-link active"
@@ -44,15 +43,14 @@ function Navbar(props) {
                 </Link>
               </li>
             )}
-            {/* { console.log("login",Boolean(!isLoggedIn))} */}
-            {!isLoggedIn && (
+            {!isAuth && (
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
                   Login
                 </Link>
               </li>
             )}
-            {!isLoggedIn && (
+            {!isAuth && (
               <li className="nav-item">
                 <Link className="nav-link" to="/signup">
                   Register
@@ -61,8 +59,8 @@ function Navbar(props) {
             )}
           </ul>
         </div>
-        {isLoggedIn && <CartButton />}
-        {isLoggedIn && (
+        {isAuth && <CartButton />}
+        {isAuth && (
           <button className="logout-btn" onClick={logOutHandler}>
             LogOut
           </button>

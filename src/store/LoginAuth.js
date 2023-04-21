@@ -6,9 +6,11 @@ const authSlice = createSlice({
   reducers: {
     login(state) {
       state.Authentication = true;
+      localStorage.setItem('loggedIn','1')
     },
     logout(state) {
       state.Authentication = false;
+      localStorage.removeItem('loggedIn')
     },
   },
 });
