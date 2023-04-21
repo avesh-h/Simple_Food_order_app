@@ -14,9 +14,9 @@ function LoginForm(props) {
       loginPassword,
     };
     props.onLogin(LoginData);
-    // if(localStorage.getItem('loggedIn')){
+    if(localStorage.getItem('loggedIn')){
       navigate('/dashboard')
-    // }
+    }
   };
 
   return (
