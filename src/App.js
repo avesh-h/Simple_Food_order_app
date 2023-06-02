@@ -125,6 +125,7 @@ function App() {
       <div className="App">
         <Navbar onLogout={logout} />
         <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
           <Route
             path="/login"
             element={!isLoggedIn && <LoginForm onLogin={login} />}
